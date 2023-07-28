@@ -10,7 +10,7 @@
 - ### Arcadia 面板
 
     ```bash
-    arcadia repo Arcadia辅助工具库 https://github.com/duimxc/Arcadia.git main --updateTaskList true --whiteList '^Arcadia_'
+    arcadia repo Arcadia辅助工具库 https://github.com/duimxc/Arcadia.git main --updateTaskList true --whiteList '^arcadia_'
     ```
     详见官方文档：https://arcadia.cool
 
