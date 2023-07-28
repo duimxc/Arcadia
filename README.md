@@ -25,8 +25,8 @@
 - ### Arcadia 面板
 
   ```bash
-  export Arcadia_API="http://IP:5678/openApi/cookie/delete" # IP:5678按照自己的Arcadia参数修改
-  export Arcadia_Token="88888888" # 详见官方文档：https://arcadia.cool
+  export arcadia_aPI="http://IP:5678/openApi/cookie/delete" # IP:5678按照自己的Arcadia参数修改
+  export arcadia_token="88888888" # 详见官方文档：https://arcadia.cool
    ```
 
 - ### 青龙面板
