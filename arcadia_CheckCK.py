@@ -20,10 +20,10 @@ from sendNotify import *
 bash_command = "task cookie check"
 
 # 定义API请求地址
-openapi = os.environ.get("Arcadia_Api")
+openapi = os.environ.get("arcadia_api")
 
 # 定义APIToken
-openApiToken = os.environ.get("Arcadia_Token")
+openApiToken = os.environ.get("arcadia_token")
 
 # 定义消息
 global msgs
