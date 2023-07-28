@@ -1,14 +1,11 @@
-#!/usr/bin/env 
-# -*- coding: utf-8 -*-
-
-"""
+/*
 File: jd_cookie_QLtoArcadia.js
 Author: Duimxc
 Date: 2023/7/27 15:00
 TG: https://t.me/duimxc
 cron: 0 0-23/20 * * * *
 new Env('青龙JD_COOKIE传输到Arcadia');
-"""
+*/
 const $ = new Env('青龙JD_COOKIE传输到Arcadia');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const axios = require('axios');
@@ -33,46 +30,51 @@ if (process.env.JD_COOKIE) {
     CookieJDs = [process.env.JD_COOKIE];
   }
 }
+if (openApiToken && url) {
+  // 循环处理每个 Cookie
+  CookieJDs.forEach((cookie, index) => {
+    const ptKeyMatch = /pt_key=(.*?);/.exec(cookie);
+    const ptPinMatch = /pt_pin=(.*?);/.exec(cookie);
+    if (ptKeyMatch && ptPinMatch) {
+      const ptKey = ptKeyMatch[1];
+      const ptPin = ptPinMatch[1];
 
-// 循环处理每个 Cookie
-CookieJDs.forEach((cookie, index) => {
-  const ptKeyMatch = /pt_key=(.*?);/.exec(cookie);
-  const ptPinMatch = /pt_pin=(.*?);/.exec(cookie);
-  if (ptKeyMatch && ptPinMatch) {
-    const ptKey = ptKeyMatch[1];
-    const ptPin = ptPinMatch[1];
-    
-    // 构建要发送的数据
-    const data = {
-      cookie: `pt_key=${ptKey};pt_pin=${ptPin};`,
-      userMsg: `备注信息${index + 1}` // 替换为实际的备注信息
-    };
+      // 构建要发送的数据
+      const data = {
+        cookie: `pt_key=${ptKey};pt_pin=${ptPin};`,
+        userMsg: `备注信息${index + 1}` // 替换为实际的备注信息
+      };
 
-    axios.post(url, data, { headers })
-      .then(response => {
-        const responseData = response.data;
-        const { code, data, msg } = responseData;
+      axios.post(url, data, { headers })
+        .then(response => {
+          const responseData = response.data;
+          const { code, data, msg } = responseData;
 
-        if (code === 1) {
-          console.log(`${ptPin}更新成功`);
-          console.log(`服务器中现存的 cookie 数量: ${data}`);
-          $.message += (${ptPin}更新成功`);
-        } else {
-          console.error(`${ptPin}更新失败: ${msg}`);
-          $.message += (`${ptPin}更新失败: ${msg}`);
-        }
-      })
-      .catch(error => {
-        console.error(`${ptPin}更新出错:`, error);
-        $.message += (`${ptPin}更新出错:`, error);
-      });
-  }
-});
-if ($.isNode()) {
-	if ($.message != '') {
-		await notify.sendNotify("青龙JD_COOKIE传输到Arcadia", `${$.message}\n)
-        }
+          if (code === 1) {
+            console.log(`${ptPin}更新成功`);
+            console.log(`服务器中现存的 cookie 数量: ${data}`);
+            $.message += (`${ptPin}更新成功`);
+          } else {
+            console.error(`${ptPin}更新失败: ${msg}`);
+            $.message += (`${ptPin}更新失败: ${msg}`);
+          }
+        })
+        .catch(error => {
+          console.error(`${ptPin}更新出错:`, error);
+          $.message += (`${ptPin}更新出错:`, error);
+        });
     }
+  });
+} else {
+  console.error("没有设置变量");
+  $.message += ("没有设置变量");
+};
+
+if ($.isNode()) {
+  if ($.message != '') {
+    notify.sendNotify("青龙JD_COOKIE传输到Arcadia", `${$.message}\n`)
+  }
+}
 
 
 // prettier-ignore
