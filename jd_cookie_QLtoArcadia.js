@@ -10,9 +10,9 @@ const $ = new Env('青龙JD_COOKIE传输到Arcadia');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const axios = require('axios');
 // 替换为实际的 openApiToken 值
-const openApiToken = process.env.Arcadia_Token;
+const openApiToken = process.env.ARCADIA_TOKEN;
 
-const url = process.env.Arcadia_Api;
+const url = process.env.ARCADIA_API;
 const headers = {
   'api-token': openApiToken
 };

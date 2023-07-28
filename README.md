@@ -32,8 +32,8 @@
 - ### 青龙面板
 
   ```bash
-  export Arcadia_API="http://IP:5678/openApi/updateCookie" # IP:5678按照自己的Arcadia参数修改
-  export Arcadia_Token="88888888" # 详见官方文档：https://arcadia.cool
+  export ARCADIA_API="http://IP:5678/openApi/updateCookie" # IP:5678按照自己的Arcadia参数修改
+  export ARCADIA_TOKEN="88888888" # 详见官方文档：https://arcadia.cool
   ```
 
 - ### Arcadia_Token 获取
