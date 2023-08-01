@@ -521,7 +521,7 @@ def send(title: str, content: str) -> None:
     if not content:
         print(f"{title} 推送内容为空！")
         return
-    content += '\n\n================================\n上车路径：http://pro.duimxc.me \n好物推荐：https://u.jd.com/1sPcl37"'
+    content += '\n\n================================\n上车路径：http://pro.duimxc.me \n好物推荐：https://u.jd.com/1sPcl37'
 
     hitokoto = push_config.get("HITOKOTO")
 
