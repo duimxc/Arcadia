@@ -14,6 +14,7 @@ import os
 import subprocess
 import re
 import requests
+import urllib.parse
 from sendNotify import *
 
 # 定义要执行的bash命令
@@ -59,8 +60,9 @@ for pin in remove_pin:
 if remove_pin:
     for pin in remove_pin:
         url = openapi
+        pin_str = urllib.parse.quote(pin, safe='/', encoding='utf-8')
         data = {
-            "ptPins": [f"{pin}"]
+            "ptPins": [f"{pin_str}"]
         }
         headers = {
             'api-token': openApiToken
