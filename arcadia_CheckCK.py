@@ -4,7 +4,7 @@
 """
 File: arcadia_CheckCK.py
 Author: Duimxc
-Date: 2023/7/27 15:00
+Date: 2023/8/9 16:00
 TG: https://t.me/duimxc
 cron: 0 30 * * * *
 new Env('Arcadia面板失效CK检测删除');
@@ -29,6 +29,11 @@ openApiToken = os.environ.get("arcadia_token")
 # 定义消息
 global msgs
 msgs = ''
+
+def inform():
+    msgs += ("\n\n\n🔊🔊本程序由Duimxc提供🔊🔊")
+    title = "Arcadia面板失效CK检测删除"
+    send(title, msgs) 
 
 # 使用Popen执行bash命令
 process = subprocess.Popen(bash_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
@@ -79,21 +84,22 @@ if remove_pin:
                     delete_count = result["data"]["deleteCount"]
                     print(f"成功删除账号{pin}。当前剩余 {account_count} 个账号和 {cookie_count} 个cookie。")
                     msgs += (f"\n✔删除账号{pin}成功。")
+                    inform()
                 else:
                     print(f"删除失败")
                     msgs += f"\n❌删除账号{pin}失败。"
+                    inform()
             else:
                 print(f"请求失败。状态码: {response.status_code}")
                 msgs += f"\n🆘请求失败。状态码: {response.status_code}"
+                inform()
         except requests.exceptions.JSONDecodeError as e:
             print(f"解析API响应数据时出现错误: {e}")
             msgs += f"\n🆘解析API响应数据时出现错误: {e}"
+            inform()
         except Exception as e:
             print(f"发生未知错误: {e}")
             msgs += f"\n🆘发生未知错误: {e}"
+            inform()
 else:
-    print("没有失效的CK。")
-    msgs += "\n🟢没有失效的CK。"
-msgs += ("\n\n\n🔊🔊本程序由Duimxc提供🔊🔊")
-title = "Arcadia面板失效CK检测删除"
-send(title, msgs)
+    print("🟢没有失效的CK。")
