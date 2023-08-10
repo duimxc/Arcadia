@@ -31,6 +31,7 @@ global msgs
 msgs = ''
 
 def inform():
+    global msgs
     msgs += ("\n\n\n🔊🔊本程序由Duimxc提供🔊🔊")
     title = "Arcadia面板失效CK检测删除"
     send(title, msgs) 
