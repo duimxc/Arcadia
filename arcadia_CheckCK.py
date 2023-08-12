@@ -88,18 +88,15 @@ if remove_pin:
                 else:
                     print(f"删除失败")
                     msgs += f"\n❌删除账号{pin}失败。"
-                inform()
             else:
                 print(f"请求失败。状态码: {response.status_code}")
                 msgs += f"\n🆘请求失败。状态码: {response.status_code}"
-                inform()
         except requests.exceptions.JSONDecodeError as e:
             print(f"解析API响应数据时出现错误: {e}")
             msgs += f"\n🆘解析API响应数据时出现错误: {e}"
-            inform()
         except Exception as e:
             print(f"发生未知错误: {e}")
             msgs += f"\n🆘发生未知错误: {e}"
-            inform()
+    inform()
 else:
     print("🟢没有失效的CK。")
