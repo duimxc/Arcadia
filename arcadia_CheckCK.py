@@ -85,11 +85,10 @@ if remove_pin:
                     delete_count = result["data"]["deleteCount"]
                     print(f"成功删除账号{pin}。当前剩余 {account_count} 个账号和 {cookie_count} 个cookie。")
                     msgs += (f"\n✔删除账号{pin}成功。")
-                    inform()
                 else:
                     print(f"删除失败")
                     msgs += f"\n❌删除账号{pin}失败。"
-                    inform()
+                inform()
             else:
                 print(f"请求失败。状态码: {response.status_code}")
                 msgs += f"\n🆘请求失败。状态码: {response.status_code}"

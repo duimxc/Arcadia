@@ -1,0 +1,60 @@
+﻿脚本名称,脚本路径,活动链接1,活动链接2,活动链接3,,活动变量1,活动变量2,其他变量,是否填地址
+组队瓜分奖品 · 超级会员,jd_cjzdgf,https://cjhydz-isv.isvjdcloud.com/wxTeam/activity?activityId=<活动id>,,,,jd_cjhy_activityId,jd_cjhy_activityUrl,
+完善信息有礼 · 超级会员,jd_completeInfoActivity,https://cjhy-isv.isvjcloud.com/wx/completeInfoActivity/view/activity?activityId=<活动id>&venderId=<店铺id>,,,,jd_completeInfoActivity_activityId,jd_completeInfoActivity_venderId,jd_completeInfoActivity_openCard 
+每日抢好礼 · 超级无线/超级会员,jd_daily,https://lzkj-isv.isvjd.com/activity/daily/wx/indexPage?activityId=<活动id>,https://cjhy-isv.isvjcloud.com/activity/daily/wx/indexPage?activityId=<活动id>,,,jd_daily_activityUrl,,jd_daily_openCard,有
+店铺抽奖中心 · 超级无线,jd_drawCenter,https://lzkj-isv.isvjd.com/drawCenter/activity/activity?activityId=<活动id>,,,,jd_drawCenter_activityId,,jd_drawCenter_addCart,有
+关注有礼 · 无线营销,jd_gzsl_contactWare,https://gzsl-isv.isvjcloud.com/wuxian/user/contactWare/<活动id>,,,,jd_gzsl_contactWare_activityUrl
+幸运大转盘 · 无线营销,jd_gzsl_getLottery,https://gzsl-isv.isvjcloud.com/wuxian/user/getLottery/<活动id>,,,,jd_gzsl_getLottery_activityUrl
+店铺礼包 · 无线营销,jd_gzsl_shopGiftBag,https://gzsl-isv.isvjcloud.com/wuxian/mobileForApp/dist/views/pages/shopGiftBag.html?activityType=<活动类型>&activityId=<活动id>,,,,jd_gzsl_shopGiftBag_activityUrl
+盖楼有礼 · 京耕,jd_jinggeng_floor,https://jinggeng-isv.isvjcloud.com/ql/front/floor?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_floor_activityUrl
+惊喜开盲盒 · 京耕,jd_jinggeng_loadBlindBox,https://jinggeng-isv.isvjcloud.com/ql/front/loadBlindBox?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_loadBlindBox_activityUrl
+加购有礼 · 京耕,jd_jinggeng_showCart,https://jinggeng-isv.isvjcloud.com/ql/front/showCart?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showCart_activityUrl
+大转盘抽奖 · 京耕,jd_jinggeng_showDrawOne,https://jinggeng-isv.isvjcloud.com/ql/front/showDrawOne?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showDrawOne_activityUrl
+关注店铺有礼 · 京耕,jd_jinggeng_showFavoriteShop,https://jinggeng-isv.isvjcloud.com/ql/front/showFavoriteShop?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showFavoriteShop_activityUrl
+邀请入会赢好礼 · 京耕,jd_jinggeng_showInviteJoin,https://jinggeng-isv.isvjcloud.com/ql/front/showInviteJoin?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showInviteJoin_activityUrl,,jd_jinggeng_showInviteJoin_address // 用户登记收货地址，按照顺序依次填写 收件人@手机号@省份@城市@区县@详细地址，多个用管道符分开,有
+组队瓜分奖品 · 京耕,jd_jinggeng_showPartition,https://jinggeng-isv.isvjcloud.com/ql/front/showPartition?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showPartition_activityUrl
+完善资料有礼 · 京耕,jd_jinggeng_showPerfectInformation,https://jinggeng-isv.isvjcloud.com/ql/front/showPerfectInformation?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showPerfectInformation_activityUrl
+店铺签到 · 京耕,jd_jinggeng_showSign,https://jinggeng-isv.isvjcloud.com/ql/front/showSign?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showSign_activityUrl
+九宫格抽奖 · 京耕,jd_jinggeng_showTaskDraw,https://jinggeng-isv.isvjcloud.com/ql/front/showTaskDraw?id=<活动id>&user_id=<店铺id>,,,,jd_jinggeng_showTaskDraw_activityUrl
+店铺抽奖 · 超级无线/超级会员,jd_luck_draw,https://lzkj-isv.isvjd.com/lzclient/<活动id>/cjwx/common/entry.html?activityId=<活动id>&gameType=<玩法类型>,https://lzkj-isv.isvjd.com/wxDrawActivity/activity/activity?activityId=<活动id>,https://cjhy-isv.isvjcloud.com/wxDrawActivity/activity/activity?activityId=<活动id>,,LUCK_DRAW_URL,,LUCK_DRAW_NOTIFY && LUCK_DRAW_OPENCARD,有
+加购有礼（超级无线欧莱雅）,jd_lzkj_loreal_cart,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=10024&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,,jd_lzkj_loreal_cart_url,,jd_lzkj_loreal_cart_openCard
+签到有礼（超级无线欧莱雅）,jd_lzkj_loreal_daySign,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=<10023/10040>&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,,jd_lzkj_loreal_daySign_url,,jd_lzkj_loreal_daySign_openCard
+幸运抽奖（超级无线欧莱雅）,jd_lzkj_loreal_draw,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=<10020/10021/10026/10041/10042/10046/10062/10063/10073/10080>&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,,jd_lzkj_loreal_draw_url
+关注商品有礼（超级无线欧莱雅）,jd_lzkj_loreal_followGoods,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=10053&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,,jd_lzkj_loreal_followGoods_url
+邀请入会有礼（超级无线欧莱雅）,jd_lzkj_loreal_invite,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=<10006/10070>&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,,jd_lzkj_loreal_invite_url,,jd_lzkj_loreal_address // 用户登记收货地址，按照顺序依次填写 收件人@手机号@省份@城市@区县@详细地址，多个用管道符分开 && jd_lzkj_loreal_invite_myhelpnum,有
+关注店铺有礼（超级无线欧莱雅）,jd_lzkj_loreal_lkFollowShop,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=10069&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,https://lorealjdcampaign-rc.isvjcloud.com/interact/index?activityType=10069&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,jd_lzkj_loreal_lkFollowShop_url
+签到抽奖（超级无线欧莱雅）,jd_lzkj_loreal_sign,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=<10001/10002/10003/10004>&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,,jd_lzkj_loreal_sign_url
+上上签抽奖（超级无线欧莱雅）,jd_lzkj_loreal_upperSign,https://lzkj-isv.isvjcloud.com/prod/cc/interactsaas/index?activityType=10054&templateId=<模板id>&activityId=<活动id>&nodeId=<nodeid>&prd=cjwx,,,,jd_lzkj_loreal_upperSign_url
+入会开卡领取礼包,jd_OpenCard,,,,,VENDER_ID,,OPENCARD_BEAN // 最小入会京豆（默认10）
+强制入会,jd_OpenCard_Force,,,,,VENDER_ID
+积分兑换京豆 · 超级会员,jd_pointExgBeans,https://cjhy-isv.isvjcloud.com/mc/wxPointShopView/pointExgBeans?venderId=<店铺id>&giftId=<活动id>,,,,jd_pointExgBeans_activityUrl,,jd_pointExgBeans_notify
+积分兑换红包 · 超级会员,jd_pointExgHb,https://cjhy-isv.isvjcloud.com/mc/wxPointShopView/pointExgHb?venderId=<店铺id>&giftId=<活动id>,,,,jd_pointExgHb_activityUrl
+积分兑换实物 · 超级会员,jd_pointExgShiWu,https://cjhy-isv.isvjcloud.com/mc/wxPointShopView/pointExgShiWu?venderId=<店铺id>&giftId=<活动id>,,,,jd_pointExgShiWu_activityUrl,,jd_pointExgShiWu_address // 用户登记收货地址，按照顺序依次填写 收件人@手机号@省份@城市@区县@详细地址，多个用管道符分开
+店铺刮刮乐,jd_shopdraw,https://wq.jd.com/mshop/shopdraw?venderId=<店铺id>,,,,jd_shopdraw_activityUrl,,,有
+店铺签到 · 超级无线/超级会员/lorealjdcampaign,jd_shopSign,,,,,jd_shopSign_activityUrl
+加购有礼 · 收藏大师,jd_txzj_cart_item,https://txzj-isv.isvjcloud.com/cart_item/home?a=<活动id>,,,,jd_cart_item_activityUrl
+关注商品有礼 · 收藏大师,jd_txzj_collect_item,https://txzj-isv.isvjcloud.com/collect_item/home?a=<活动id>,,,,jd_collect_item_activityUrl
+关注店铺有礼 · 收藏大师,jd_txzj_collect_shop,https://txzj-isv.isvjcloud.com/collect_shop/home?a=<活动id>,,,,jd_collect_shop_activityUrl
+幸运抽奖 · 收藏大师,jd_txzj_lottery,https://txzj-isv.isvjcloud.com/lottery/home?a=<活动id>,,,,jd_lottery_activityUrl
+分享有礼 · 收藏大师,jd_txzj_share_new,https://txzj-isv.isvjcloud.com/share_new/home?a=<活动id>,,,,jd_share_new_activityUrl
+店铺礼包 · 收藏大师,jd_txzj_shop_gift,https://txzj-isv.isvjcloud.com/shop_gift?code=<活动id>,,,,jd_shop_gift_activityUrl
+签到有礼 · 收藏大师,jd_txzj_sign_in,https://txzj-isv.isvjcloud.com/sign_in/home?a=<活动id>,,,,jd_sign_in_activityUrl
+盖楼有礼 · 超级无线,jd_wxBuildActivity,https://lzkj-isv.isvjd.com/wxBuildActivity/activity?activityId=<活动id>,,,,jd_wxBuildActivity_activityId,,jd_wxBuildActivity_openCard,有
+购物车锦鲤 · 超级无线,jd_wxCartKoi,https://lzkjdz-isv.isvjd.com/wxCartKoi/cartkoi/activity/activity?activityId=<活动id>,,,,jd_wxCartKoi_activityId,,,有
+集卡有礼 · 超级无线,jd_wxCollectCard,https://lzkjdz-isv.isvjd.com/wxCollectCard/activity/entry.html?activityId=<活动id>,,,,jd_wxCollectCard_activityId,,,有
+加购有礼 · 超级无线/超级会员,jd_wxCollectionActivity,https://lzkj-isv.isvjd.com/wxCollectionActivity/activity?activityId=<活动id>,https://cjhy-isv.isvjcloud.com/wxCollectionActivity/activity?activityId=<活动id>,https://lzkj-isv.isvjd.com/wxCollectionActivity/activity2/activity?activityId=<活动id>,https://cjhy-isv.isvjd.com/wxCollectionActivity/activity2/activity?activityId=<活动id>,jd_wxCollectionActivity_activityUrl,,jd_wxCollectionActivity_openCard,有
+粉丝互动 · 超级无线,jd_wxFansInterActionActivity,https://lzkjdz-isv.isvjd.com/wxFansInterActionActivity/activity/activity?activityId=<活动id>,,,,jd_wxFansInterActionActivity_activityId,,jd_wxFansInterActionActivity_addCart,有
+无线游戏 · 超级无线,jd_wxgame,https://lzkj-isv.isvjd.com/wxgame/activity/activity?activityId=<活动id>,,,,jd_wxgame_activityId,,jd_wxgame_addCart,有
+游戏赢大礼 · 超级无线/超级会员,jd_wxGameActivity,https://lzkj-isv.isvjd.com/wxGameActivity/activity/activity?activityId=<活动id>,https://cjhy-isv.isvjcloud.com/wxGameActivity/activity?activityId=<活动id>,,,jd_wxGameActivity_activityUrl,,jd_wxGameActivity_openCard && jd_wxGameActivity_endScore // 指定游戏分数，默认不指定，填0也为不指定,有
+知识超人 · 超级无线/超级会员,jd_wxKnowledgeActivity,https://lzkj-isv.isvjcloud.com/wxKnowledgeActivity/activity/activity?activityId=<活动id>,https://cjhy-isv.isvjcloud.com/wxKnowledgeActivity/activity/activity?activityId=<活动id>,,,jd_wxKnowledgeActivity_activityUrl,,jd_wxKnowledgeActivity_openCard,有
+生日礼包/会员等级礼包 · 超级会员,jd_wxMcLevelAndBirthGifts,https://cjhy-isv.isvjcloud.com/mc/wxMcLevelAndBirthGifts/activity?activityId=<活动id>,,,,jd_wxMcLevelAndBirthGifts_activityId,,jd_wxMcLevelAndBirthGifts_openCard,
+读秒拼手速 · 超级无线,jd_wxSecond,https://lzkjdz-isv.isvjd.com/wxSecond/activity/activity?activityId=<活动id>,,,,jd_wxSecond_activityId,,jd_wxSecond_addCart,有
+分享有礼 · 超级无线,jd_wxShareActivity,https://lzkjdz-isv.isvjd.com/wxShareActivity/activity/activity?activityId=<活动id>,,,,jd_wxShareActivity_activityId,,jd_wxShareActivity_helpnum // 需要助力的账号数量,有
+关注店铺有礼 · 超级无线/超级会员,jd_wxShopFollowActivity,https://cjhy-isv.isvjcloud.com/wxShopFollowActivity/activity?activityId=<活动id>,https://lzkj-isv.isvjcloud.com/wxShopFollowActivity/activity/activity?activityId=<活动id>,,,jd_wxShopFollowActivity_activityUrl,,jd_wxShopFollowActivity_openCard && jd_wxShopFollowActivity_notify,有
+店铺礼包 · 超级无线/超级会员/fjzy,jd_wxShopGift,https://lzkj-isv.isvjd.com/wxShopGift/activity?activityId=<活动id>,https://cjhy-isv.isvjcloud.com/wxShopGift/activity?activityId=<活动id>,https://fjzy-isv.isvjcloud.com/index.php?mod=wxShopGift&c=giftOne&activeId=<活动id>,,jd_wxShopGift_activityUrl,,jd_wxShopGift_openCard
+店铺签到 · 超级无线/超级会员,jd_wxSign,https://lzkj-isv.isvjd.com/sign/sevenDay/signActivity?activityId=<活动id>,,,,LZKJ_SEVENDAY,,,有
+店铺签到 · 超级无线/超级会员,jd_wxSign,https://lzkj-isv.isvjd.com/sign/signActivity2?activityId=<活动id>,,,,LZKJ_SIGN,,,有
+店铺签到 · 超级无线/超级会员,jd_wxSign,https://cjhy-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=<活动id>,,,,CJHY_SEVENDAY,,,有
+店铺签到 · 超级无线/超级会员,jd_wxSign,https://cjhy-isv.isvjcloud.com/sign/signActivity?activityId=<活动id>,,,,CJHY_SIGN,,,有
+让福袋飞 · 超级无线,jd_wxUnPackingActivity,https://lzkjdz-isv.isvjd.com/wxUnPackingActivity/activity/activity?activityId=<活动id>,,,,jd_wxUnPackingActivity_activityId,,,有
+组队瓜分奖品 · 超级无线,jd_zdjr,https://lzkjdz-isv.isvjd.com/wxTeam/activity2/activity?activityId=<活动id>,,,,jd_zdjr_activityId,jd_zdjr_activityUrl
