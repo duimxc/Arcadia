@@ -27,6 +27,7 @@
   ```bash
   export arcadia_api="http://IP:5678/openApi/cookie/delete" # IP:5678按照自己的Arcadia参数修改
   export arcadia_token="88888888" # 详见官方文档：https://arcadia.cool
+  export white_list="pin1&pin2&...." # 白名单，在白名单中的CK不删除，及时更新CK
    ```
 
 - ### 青龙面板

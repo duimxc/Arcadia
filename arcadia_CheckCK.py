@@ -4,7 +4,7 @@
 """
 File: arcadia_CheckCK.py
 Author: Duimxc
-Date: 2023/8/9 16:00
+Date: 2023/11/10 10:00
 TG: https://t.me/duimxc
 cron: 0 30 * * * *
 new Env('Arcadia面板失效CK检测删除');
@@ -25,6 +25,9 @@ openapi = os.environ.get("arcadia_api")
 
 # 定义APIToken
 openApiToken = os.environ.get("arcadia_token")
+
+# 定义白名单
+white_list = os.environ["white_list"].split('&')
 
 # 定义消息
 global msgs
@@ -65,6 +68,10 @@ for pin in remove_pin:
 # 如果有失效的CK，才进行API请求
 if remove_pin:
     for pin in remove_pin:
+        for pin in white_list:
+            print(f"账号{pin}在白名单中没有删除，请及时更新")
+            msgs += (f"\n⛔账号{pin}在白名单中没有删除，请及时更新")
+            continue
         url = openapi
         pin_str = urllib.parse.quote(pin, safe='/', encoding='utf-8')
         data = {

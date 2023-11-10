@@ -1,0 +1,19 @@
+{
+    "api_id": api_id,
+    "api_hash": "api_hash",
+    "log_id": 群id，群需要加机器人,
+    "bot_token": "bot_token",
+    "user_id": 用户id,
+    "proxy": false,
+    "proxy_type": "socks5",
+    "proxy_addr": "192.168.1.201",
+    "proxy_port": 7890,
+    "proxy_username": "",
+    "proxy_password": "",
+    "proxy_secret": "如果proxy_type是MTProxy,则该值必填",
+    "tglog_send": false,
+    "monitor_cache_size": 5000,
+    "listen_in": [
+        监控频道
+    ]
+}
