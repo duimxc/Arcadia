@@ -25,7 +25,7 @@
 - ### Arcadia 面板
 
   ```bash
-  export ARCADIA_API="http://IP:5678/openApi/cookie/delete" # IP:5678按照自己的Arcadia参数修改
+  export ARCADIA_API="http://IP:5678" # IP:5678按照自己的Arcadia参数修改
   export ARCADIA_TOKEN="88888888" # 详见官方文档：https://arcadia.cool
    ```
 
