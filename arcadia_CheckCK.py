@@ -68,7 +68,7 @@ def changeStatus(data):
         "id": data,
         "status": 0
     }
-    response = requests.post(url=url, headers=headers, data=data)
+    response = requests.post(url=url, headers=headers, json=data)
     response.raise_for_status()
 
 
