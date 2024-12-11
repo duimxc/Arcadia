@@ -16,8 +16,9 @@ import json
 
 import requests
 
-Auth_File = "/arcadia/config/auth.josn"
+Auth_File = "/arcadia/config/auth.json"
 with open(Auth_File, 'r', encoding='utf-8') as f:
+    f = f.read()
     auth = json.loads(f)
 api_token = auth.get("openApiToken")
 base_url = "http://127.0.0.1:5678"
