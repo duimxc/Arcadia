@@ -12,11 +12,15 @@ new Env('Arcadia京东CK检测（新）');
 
 import os
 import re
+import json
 
 import requests
 
-api_token = os.environ["ARCADIA_TOKEN"]
-base_url = os.environ["ARCADIA_API"]
+Auth_File = "/arcadia/config/auth.josn"
+with open(Auth_File, 'r', encoding='utf-8') as f:
+    auth = json.loads(f)
+api_token = auth.get("openApiToken")
+base_url = "http://127.0.0.1:5678"
 
 
 def get_cookies(compositeId):
