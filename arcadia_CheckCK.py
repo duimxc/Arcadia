@@ -7,14 +7,13 @@ Author: Duimxc
 Date: 2024/5/17 23:00
 TG: https://t.me/duimxc
 cron: 0 30 * * * *
-new Env('青龙JD_COOKIE传输到Arcadia');
+new Env('Arcadia京东CK检测（新）');
 """
 
 import os
 import re
-import time
+
 import requests
-import urllib.parse
 
 api_token = os.environ["ARCADIA_TOKEN"]
 base_url = os.environ["ARCADIA_API"]

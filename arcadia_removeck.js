@@ -1,6 +1,7 @@
 /*
 自动删除无效账号
 适用于旧版本Arcadia
+new Env('Arcadia京东CK检测(旧)');
 */
 
 // 用户配置
@@ -93,7 +94,7 @@ async function cookie_delete(ptPins) {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/122.0.0.0',
             'api-token': openApiToken,
         },
-        data: { ptPins },
+        data: {ptPins},
         timeout: 30000,
     })
     if (!res.success) {
@@ -105,7 +106,7 @@ async function cookie_delete(ptPins) {
         return
     }
     if (res.data.code === 1) {
-        const { cookieCount, deleteCount } = res.data.data
+        const {cookieCount, deleteCount} = res.data.data
         console.log(`已删除${deleteCount}个过期账号，现存${cookieCount}个账号`)
     } else if (res.data.msg) {
         console.log(res.data.msg)
@@ -123,7 +124,72 @@ function getCookieValue(cookieStr, fieldName) {
 }
 
 // prettier-ignore
-async function concTask(a="3",t,n){const e=t.slice();let o=!1,s=0,c=0;async function i(t,a){t=await n(t,a);t&&("boolean"==typeof t||"object"==typeof t&&t?.runEnd)&&(o=!0),s--,r()}async function r(){for(;s<a&&0<e.length&&!o;){var t=e.shift();s++,await i(t,++c)}o&&await new Promise(t=>{const a=setInterval(()=>{0===s&&(clearInterval(a),t())},100)})}var l=Math.min(e.length,a),f=[];for(let t=0;t<l;t++){var v=e.shift();s++,c++,f.push(i(v,c))}await Promise.all(f),r(),await new Promise(t=>{const a=setInterval(()=>{0!==s&&!o||(clearInterval(a),t())},100)})}
+async function concTask(a = "3", t, n) {
+    const e = t.slice();
+    let o = !1, s = 0, c = 0;
+    
+    async function i(t, a) {
+        t = await n(t, a);
+        t && ("boolean" == typeof t || "object" == typeof t && t?.runEnd) && (o = !0), s--, r()
+    }
+    
+    async function r() {
+        for (; s < a && 0 < e.length && !o;) {
+            var t = e.shift();
+            s++, await i(t, ++c)
+        }
+        o && await new Promise(t => {
+            const a = setInterval(() => {
+                0 === s && (clearInterval(a), t())
+            }, 100)
+        })
+    }
+    
+    var l = Math.min(e.length, a), f = [];
+    for (let t = 0; t < l; t++) {
+        var v = e.shift();
+        s++, c++, f.push(i(v, c))
+    }
+    await Promise.all(f), r(), await new Promise(t => {
+        const a = setInterval(() => {
+            0 !== s && !o || (clearInterval(a), t())
+        }, 100)
+    })
+}
 
 // prettier-ignore
-async function request(e){const t={success:!1,status:null,data:null,headers:null,error:null,connected:!1};try{if(!e||!e.url)return t.error="缺少必要的请求参数",t;Object.assign(axios.defaults,{headers:{common:{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}},maxContentLength:1/0,maxBodyLength:1/0,maxRedirects:1/0,timeout:6e4,transformResponse:[e=>{try{return JSON.parse(e)}catch{}try{var s,t=/[\w$.]+\(\s*({[\s\S]*?})\s*\)\s*;?/;if(t.test(e))return s=e.match(t)[1],JSON.parse(s)}catch{}return e}]}),e.body&&(e.data=e.body,delete e.body);for(const s of["data","params"])e[s]||delete e[s];e.method=(e.method||"get").toLowerCase(),!e.data||"object"!=typeof e.data||e.headers&&e.headers["Content-Type"]&&!e.headers["Content-Type"].includes("application/x-www-form-urlencoded")||(e.data=querystring.stringify(e.data)),await axios(e).then(e=>{t.success=!0,t.status=e.status,t.data=e.data,t.headers=e.headers,t.connected=!0}).catch(e=>{var s=e.response?(t.connected=!0,e.response.data&&(t.data=e.response.data),e.response.headers&&(t.headers=e.response.headers),`请求失败 [Response code ${e.response?.status}]`):e.request?e.code:e.message||"未知错误状态";t.error=s,t.status=e.response?.status||null})}catch(e){t.error=e.message||e}return t}
+async function request(e) {
+    const t = {success: !1, status: null, data: null, headers: null, error: null, connected: !1};
+    try {
+        if (!e || !e.url) return t.error = "缺少必要的请求参数", t;
+        Object.assign(axios.defaults, {
+            headers: {common: {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}},
+            maxContentLength: 1 / 0,
+            maxBodyLength: 1 / 0,
+            maxRedirects: 1 / 0,
+            timeout: 6e4,
+            transformResponse: [e => {
+                try {
+                    return JSON.parse(e)
+                } catch {
+                }
+                try {
+                    var s, t = /[\w$.]+\(\s*({[\s\S]*?})\s*\)\s*;?/;
+                    if (t.test(e)) return s = e.match(t)[1], JSON.parse(s)
+                } catch {
+                }
+                return e
+            }]
+        }), e.body && (e.data = e.body, delete e.body);
+        for (const s of ["data", "params"]) e[s] || delete e[s];
+        e.method = (e.method || "get").toLowerCase(), !e.data || "object" != typeof e.data || e.headers && e.headers["Content-Type"] && !e.headers["Content-Type"].includes("application/x-www-form-urlencoded") || (e.data = querystring.stringify(e.data)), await axios(e).then(e => {
+            t.success = !0, t.status = e.status, t.data = e.data, t.headers = e.headers, t.connected = !0
+        }).catch(e => {
+            var s = e.response ? (t.connected = !0, e.response.data && (t.data = e.response.data), e.response.headers && (t.headers = e.response.headers), `请求失败 [Response code ${e.response?.status}]`) : e.request ? e.code : e.message || "未知错误状态";
+            t.error = s, t.status = e.response?.status || null
+        })
+    } catch (e) {
+        t.error = e.message || e
+    }
+    return t
+}

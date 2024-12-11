@@ -146,7 +146,7 @@ if __name__ == "__main__":
 
         member_id = queryMember(id, pt_pin)
         if member_id:
-            update_data.append({"id": member_id, "group_id": id, "value": CookieJD, "enable":1})
+            update_data.append({"id": member_id, "group_id": id, "value": CookieJD, "enable": 1})
         else:
             create_data.append({"value": CookieJD})
 
