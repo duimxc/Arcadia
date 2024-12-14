@@ -4,10 +4,12 @@
 """
 File: jd_Arcadia.py
 Author: Duimxc
-Date: 2024/5/17 21:00
+Date: 2024/12/14 14:00
 TG: https://t.me/duimxc
 cron: 0 30 * * * *
 new Env('青龙JD_COOKIE传输到Arcadia');
+1 初始
+1.1 修复自动创建环境变量组没有指定分隔符导致的错误，现在默认使用&分隔符，不再需要手动指定。自动创建只有在没有环境变量组时才会执行。
 """
 
 import os
@@ -60,7 +62,8 @@ def create():
     data = {
         "category": "composite",
         "data": {
-            "type": "JD_COOKIE"
+            "type": "JD_COOKIE",
+            "separator": "&"
         }
     }
     url = f"{base_url}/api/open/env/v1/create"
@@ -77,7 +80,8 @@ def query():
     if result['code'] == 1 and result['result']:
         return result['result'][0]['data']['id']
     else:
-        raise ValueError("Query failed or no JD_COOKIE found")
+        print("未查询到JD_COOKIE，开始创建。")
+        create()
 
 
 def queryMember(id, value):
@@ -130,7 +134,6 @@ if __name__ == "__main__":
         print("没有找到有效的 Cookie，脚本结束。")
         exit()
 
-    create()
     try:
         id = query()
     except ValueError as e:
