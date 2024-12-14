@@ -82,6 +82,7 @@ def query():
     else:
         print("未查询到JD_COOKIE，开始创建。")
         create()
+        return None
 
 
 def queryMember(id, value):
@@ -120,8 +121,9 @@ def create_value(data, compositeId):
     response = requests.post(url=url, headers=headers, json=payload)
     response.raise_for_status()
     result = response.json()
+    print(result)
     if isinstance(result['result'], dict):  # If a single item was created
-        return 1
+        return result['result']['count']
     else:  # If multiple items were created
         return result['result']['count']
 
@@ -136,6 +138,8 @@ if __name__ == "__main__":
 
     try:
         id = query()
+        if not id:
+            id = query()
     except ValueError as e:
         print(e)
         exit()
@@ -152,9 +156,6 @@ if __name__ == "__main__":
             update_data.append({"id": member_id, "group_id": id, "value": CookieJD, "enable": 1})
         else:
             create_data.append({"value": CookieJD})
-
-    print("Update Data:", update_data)
-    print("Create Data:", create_data)
 
     if update_data:
         updated_items = update(update_data)
